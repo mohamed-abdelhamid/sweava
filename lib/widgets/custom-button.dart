@@ -5,15 +5,15 @@ import '../controllers/size_config.dart';
 class CustomButton extends StatelessWidget {
   final Color buttonColor, textColor;
   final String text;
-  final String destination;
   final double? width;
+  final Function onPressed;
 
-  const CustomButton({
+  CustomButton({
     required this.buttonColor,
     required this.text,
     required this.textColor,
     this.width,
-    required this.destination,
+    required this.onPressed,
   });
 
   @override
@@ -30,7 +30,7 @@ class CustomButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(8.0),
       ),
       child: TextButton(
-        onPressed: () => Navigator.pushNamed(context, destination),
+        onPressed: ()=>onPressed(),
         child: Text(
           text,
           textAlign: TextAlign.center,

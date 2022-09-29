@@ -43,7 +43,7 @@ class Favourites extends StatelessWidget {
                 buttonColor: Color(0xffF26651),
                 text: 'Start ordering',
                 textColor: Colors.white,
-                destination: 'home',
+                onPressed: ()=>Navigator.pushNamed(context, 'home'),
               ),
             ),
           ],

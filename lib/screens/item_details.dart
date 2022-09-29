@@ -3,6 +3,7 @@ import 'package:sweava/constants.dart';
 import 'package:sweava/controllers/size_config.dart';
 import 'package:sweava/widgets/custom-button.dart';
 
+import '../items_model/basket.dart';
 import '../items_model/item_list.dart';
 import '../widgets/wheel_listview.dart';
 
@@ -208,8 +209,14 @@ class _ItemScreenState extends State<ItemScreen> {
                     ],
                   ),
                   CustomButton(
-                      buttonColor: Color(0xffF26651), text: 'Add to basket', textColor: Colors.white, destination: 'home',
-                  )
+                    buttonColor: Color(0xffF26651),
+                    text: 'Add to basket',
+                    textColor: Colors.white,
+                    onPressed: (){
+                      BasketList.basketItemsQuantity.addAll({Items.items[widget.index]:1});
+                      Navigator.pushNamed(context, 'home');
+                    },
+                  ),
                 ],
               ),
             ),

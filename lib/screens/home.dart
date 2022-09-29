@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sweava/screens/profile.dart';
-import 'package:sweava/screens/shopping_cart.dart';
+import 'package:sweava/screens/basket.dart';
 import 'package:sweava/screens/user_home.dart';
 
 import 'favourites.dart';
@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
     UserHome(),
     Favourites(),
     Profile(),
-    ShoppingCart(),
+    Basket(),
   ];
 
   @override
@@ -42,11 +42,13 @@ class _HomeState extends State<Home> {
                 type: BottomNavigationBarType.fixed,
                 elevation: 0, // to get rid of the shadow
                 onTap: (index){
-                  setState(()=>currentIndex = index);
+                  // when basket is selected make sure to rerender the screen
+                  if(index == 3) Navigator.pushNamed(context, 'basket');
+                  else setState(()=>currentIndex = index);
                 },
                 selectedItemColor: Color(0xffF26651),
                 unselectedItemColor: Colors.black26,
-                items:  const [
+                items:   [
                   BottomNavigationBarItem(icon: Icon(Icons.home,),label: ''),
                   BottomNavigationBarItem(icon: Icon(Icons.favorite_outline,),label: ''),
                   BottomNavigationBarItem(icon: Icon(Icons.person_outline,),label: ''),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sweava/screens/basket.dart';
+import 'package:sweava/screens/checkout.dart';
 import 'package:sweava/screens/home.dart';
 import 'package:sweava/screens/login.dart';
 import 'package:sweava/screens/splash.dart';
@@ -37,6 +39,8 @@ class MyApp extends StatelessWidget {
         '/':(context)=> Splash(),
         'login':(context)=> Login(),
         'home':(context)=>Home(),
+        'basket':(context)=>Basket(),
+        'checkout':(context)=>CheckOut(),
       },
       initialRoute:'/',
     );

@@ -94,11 +94,11 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                         SizedBox(width: 5*SizeConfig.blockSizeVertical,),
-                        const CustomButton(
+                        CustomButton(
                             buttonColor: Color(0xffF26651),
                             text: 'Login',
                             textColor: Colors.white,
-                            destination: 'home',
+                            onPressed: ()=>Navigator.pushNamed(context, 'home'),
                         ),
                         Center(
                           child: GestureDetector(
