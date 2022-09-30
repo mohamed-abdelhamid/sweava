@@ -41,7 +41,7 @@ class _BasketState extends State<Basket> {
                       color: Colors.black,
                       size: 6 * SizeConfig.blockSizeHorizontal,
                     ),
-                    onPressed: () => Navigator.pushNamed(context,'home'),
+                    onPressed: () => Navigator.pop(context),
                   ),
                   Text('Basket',textAlign: TextAlign.center,style: kTextStyle,),
                   IconButton(

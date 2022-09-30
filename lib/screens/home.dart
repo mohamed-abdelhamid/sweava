@@ -4,6 +4,7 @@ import 'package:sweava/screens/basket.dart';
 import 'package:sweava/screens/user_home.dart';
 
 import 'favourites.dart';
+import 'home_hidden_drawer.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -26,6 +27,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffE5E5E5),
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
@@ -44,6 +46,7 @@ class _HomeState extends State<Home> {
                 onTap: (index){
                   // when basket is selected make sure to rerender the screen
                   if(index == 3) Navigator.pushNamed(context, 'basket');
+                  else if (index == 2) Navigator.pushNamed(context, 'profile');
                   else setState(()=>currentIndex = index);
                 },
                 selectedItemColor: Color(0xffF26651),

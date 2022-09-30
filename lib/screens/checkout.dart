@@ -55,7 +55,7 @@ class _CheckOutState extends State<CheckOut> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Shipping informtion',
+                    'Shipping information',
                     style: kTextStyle.copyWith(
                         fontSize: 4 * SizeConfig.blockSizeHorizontal),
                   ),

@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
 import 'package:sweava/controllers/size_config.dart';
 import 'package:sweava/widgets/search_item.dart';
 
 import '../constants.dart';
 import '../widgets/home_main_menu.dart';
 import '../widgets/item_list.dart';
+import 'home.dart';
+import 'home_hidden_drawer.dart';
 
 class UserHome extends StatefulWidget {
-  const UserHome({Key? key}) : super(key: key);
+
+  //pass home context to open hidden drawer menu
+  const UserHome( {Key? key}) : super(key: key);
 
   @override
   State<UserHome> createState() => _UserHomeState();
@@ -23,10 +28,11 @@ class _UserHomeState extends State<UserHome> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xffE5E5E5),
+        resizeToAvoidBottomInset: false,
         key: _key,
-        drawer: Drawer(),
+        drawer: HomeHiddenDrawer(),
         body: SingleChildScrollView(
-          physics: ClampingScrollPhysics(),
+          physics: NeverScrollableScrollPhysics(),
           child: Column(
             children: [
               Padding(
@@ -37,7 +43,7 @@ class _UserHomeState extends State<UserHome> {
                     IconButton(
                       icon: Image.asset('assets/images/drawer.png',
                           width: 5 * SizeConfig.blockSizeHorizontal),
-                      onPressed: () => _key.currentState!.openDrawer(),
+                      onPressed: () => SimpleHiddenDrawerController.of(context).open()// _key.currentState!.openDrawer(),
                     ),
                     SizedBox(
                       width: 2 * SizeConfig.blockSizeHorizontal,

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:sweava/screens/basket.dart';
 import 'package:sweava/screens/checkout.dart';
 import 'package:sweava/screens/home.dart';
+import 'package:sweava/screens/home_hidden_drawer.dart';
 import 'package:sweava/screens/login.dart';
+import 'package:sweava/screens/profile.dart';
 import 'package:sweava/screens/splash.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'controllers/size_config.dart';
@@ -38,9 +40,11 @@ class MyApp extends StatelessWidget {
       routes: {
         '/':(context)=> Splash(),
         'login':(context)=> Login(),
+        'home drawer':(context)=> HomeHiddenDrawer(),
         'home':(context)=>Home(),
         'basket':(context)=>Basket(),
         'checkout':(context)=>CheckOut(),
+        'profile':(context)=>Profile(),
       },
       initialRoute:'/',
     );

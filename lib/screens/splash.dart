@@ -24,7 +24,7 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffF26651),
+        //backgroundColor: Color(0xffF26651),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -36,7 +36,7 @@ class _SplashState extends State<Splash> {
               child: Text(
                 'Find Your Gadget',
                 style: GoogleFonts.raleway(
-                  color: Colors.white,
+                  color: Color(0xffF26651),
                   fontSize: 8 * SizeConfig.blockSizeVertical,
                   fontWeight: FontWeight.w700,
                 ),
@@ -44,7 +44,7 @@ class _SplashState extends State<Splash> {
             ),
             SizedBox(height: 5* SizeConfig.blockSizeVertical,),
             Center(
-              child: Image.asset('assets/images/logo.png',color: Colors.white),
+              child: Image.asset('assets/images/logo.png',color: Color(0xffF26651)),
             ),
             Container(
               height: 45 * SizeConfig.blockSizeVertical,
